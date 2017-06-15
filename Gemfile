@@ -14,6 +14,7 @@ gem 'haml'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'paperclip'
 gem 'simple_form'
+gem 'yarn', '~> 0.1.1'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
