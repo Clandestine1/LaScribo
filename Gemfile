@@ -16,6 +16,7 @@ gem 'paperclip'
 gem 'simple_form'
 gem 'yarn', '~> 0.1.1'
 gem 'devise'  
+gem 'thredded', '~> 0.13.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
