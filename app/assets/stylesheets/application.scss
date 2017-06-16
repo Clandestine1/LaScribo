@@ -10,30 +10,57 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require about
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 body {  
-  background-color: #fafafa;
+  background-image: url(http://i.imgur.com/mrW9FkW.jpg);
   font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
 .navbar-brand {
   a {
-    color: #125688;
+    color: #c3d6f4;
+  }
+}
+
+.navbar-brand:hover {
+  a {
+    color:  white;
+    text-decoration: none;
+
   }
 }
 
 .navbar-default {
-  background-color: #fff;
+  background-color: rgba(0,0,0,0.54) !important;
   height: 54px;
   .navbar-nav li a {
-    color: #125688;
+    color: #c3d6f4;
+    font-size: 20px;
   }
 }
 
+.navbar-default:hover {
+  background-color: black;
+  height: 54px;
+  .navbar-nav li a:hover {
+    color: white;
+    -webkit-animation-name: hvr-pulse-grow;
+  animation-name: hvr-pulse-grow;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+  }
+}
 .navbar-container {
   width: 640px;
   margin: 0 auto;
@@ -99,3 +126,35 @@ font-size: 18px;
   margin-bottom: 40px;
 }
 
+/* Pulse Grow */
+@-webkit-keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+.hvr-pulse-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+}
+.hvr-pulse-grow:hover, .hvr-pulse-grow:focus, .hvr-pulse-grow:active {
+  -webkit-animation-name: hvr-pulse-grow;
+  animation-name: hvr-pulse-grow;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
