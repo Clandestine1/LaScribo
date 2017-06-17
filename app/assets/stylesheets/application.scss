@@ -136,7 +136,11 @@ font-size: 18px;
 .edit-links {
   margin-top: 20px;
   margin-bottom: 40px;
+  position: absolute;
+  bottom: 0;
 }
+
+
 
 /* Pulse Grow */
 @-webkit-keyframes hvr-pulse-grow {
@@ -177,7 +181,6 @@ font-size: 18px;
   width: auto;
   font-size: 11px;
   line-height: 1.4em;
-  float: left;
   -webkit-border-radius: 5px;
      -moz-border-radius: 5px;
           border-radius: 5px;
@@ -189,7 +192,7 @@ font-size: 18px;
 }
 
 .boxy img {
-  display: block;
-  width: 100%;
+  display: inline;
+  width: auto;
 }
 
