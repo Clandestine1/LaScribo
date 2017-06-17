@@ -82,19 +82,21 @@ body {
   margin-top: 6% !important;  
 }
 
+#wrapper {
+  float: right;
+  opacity: 0;
+}
+
 .posts-wrapper {
   width: auto;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: inline-flex !important;
   margin: 0 auto;
-  justify-content: flex-start !important;
+  justify-content: space-around !important;
   flex-direction: column;
-  vertical-align: baseline !important;
-  align-items: center;
-  float: right;
+  vertical-align: top !important;
+  align-content: stretch !important;
+  float: left;
+  margin-right: 4% !important; 
+  margin-left: 2% !important;
 }
 
 .post {
@@ -114,15 +116,23 @@ body {
   -moz-box-shadow: 1px 0px 8px 6px rgba(0,0,0,0.55);
   box-shadow: 1px 0px 8px 6px rgba(0,0,0,0.55);
   background-image: none;
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+  -webkit-animation-name: hvr-pulse-grow;
+  animation-name: hvr-pulse-grow;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 4;
+  animation-iteration-count: 4;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
 }
 
 .image {
   border-bottom: 1px solid #eeefef;
   border-top: 1px solid #eeefef;
   min-width: 340px;
-  max-height: 450px;
+  max-height: 460px;
   margin-left: -2.4%;
   margin-top: -3%;
 }
