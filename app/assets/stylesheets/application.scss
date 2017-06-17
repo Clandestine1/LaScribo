@@ -11,19 +11,30 @@
  * It is generally better to create a new file per style scope.
  *
  *= require about
+ *= require 'masonry/basic'
+ *= require 'masonry/centered'
+ *= require 'masonry/fluid'
+ *= require 'masonry/gutters'
+ *= require 'masonry/infinitescroll'
+ *= require 'masonry/right-to-left'
+ *= require 'masonry/transitions'
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 body {  
   background-image: url(http://i.imgur.com/mrW9FkW.jpg);
   font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  margin: 0 auto;
 }
 
 .navbar-brand {
   a {
     color: #c3d6f4;
+    font-size: 28px;
+    font-weight: bolder;
   }
 }
 
@@ -41,6 +52,7 @@ body {
   .navbar-nav li a {
     color: #c3d6f4;
     font-size: 20px;
+    font-weight: bolder;
   }
 }
 
@@ -67,7 +79,6 @@ body {
 }
 
 .posts-wrapper {
-  padding-top: 40px;
   margin: 0 auto;
   max-width: 242px;
   width: 100%;
@@ -80,6 +91,7 @@ body {
   border-radius: 3px;
   border-width: 1px;
   margin-bottom: 60px;
+  max-width: 400px;
 }
 
 .post-head {
@@ -158,3 +170,26 @@ font-size: 18px;
   -webkit-animation-direction: alternate;
   animation-direction: alternate;
 }
+
+.boxy {
+  margin: 6px;
+  padding: 6px;
+  width: auto;
+  font-size: 11px;
+  line-height: 1.4em;
+  float: left;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+
+.boxy h2 {
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.boxy img {
+  display: block;
+  width: 100%;
+}
+

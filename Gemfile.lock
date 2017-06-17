@@ -136,6 +136,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.6)
       mime-types (>= 1.16, < 4)
+    masonry-rails (0.2.4)
+      railties
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -307,6 +309,7 @@ DEPENDENCIES
   jquery-rails (~> 4.3, >= 4.3.1)
   jquery-turbolinks
   listen (>= 3.0.5, < 3.2)
+  masonry-rails
   paperclip
   pg (~> 0.18)
   puma (~> 3.7)
