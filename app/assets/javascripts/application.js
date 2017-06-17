@@ -9,7 +9,6 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives
-//= require posts
 //= require jquery
 //= require jquery_ujs
 //= require rails-ujs
@@ -37,5 +36,16 @@
 //= require bootstrap/tooltip
 //= require bootstrap/popover
 //= require_tree .
+//= require posts
+
+$(window).scroll(function() { 
+if ($(this).scrollTop()> 800) { 
+$('.post.hvr-grow.boxy').addClass('flipInX');
+} else {
+$('.post.hvr-grow.boxy').removeClass('flipInX');	
+}
+});
+
+
 
 
