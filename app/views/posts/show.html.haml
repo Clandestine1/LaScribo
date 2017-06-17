@@ -1,12 +1,13 @@
+%div#show-container
 .posts-wrapper
-  .post
+  %div#no-animation.post
     .post-head
-      .name
-        Boss Shauna
     .image.center-block
-      =image_tag @post.image.url(:thumb)
+      =image_tag @post.image.url(:medium)
     %p.caption
       =@post.caption
+    %p.name
+      Boss Shauna
     %p.story
       =@post.story  
     %div.text-center.edit-links
