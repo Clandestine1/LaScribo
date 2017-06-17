@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby "2.4.0"
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -18,6 +18,7 @@ gem 'yarn', '~> 0.1.1'
 gem 'devise'  
 gem 'thredded', '~> 0.13.0'
 gem 'masonry-rails'
+gem 'animate-rails'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
