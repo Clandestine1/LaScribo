@@ -16,7 +16,6 @@ gem 'paperclip'
 gem 'simple_form'
 gem 'yarn'
 gem 'devise'  
-gem 'thredded', '~> 0.13.0'
 gem 'masonry-rails'
 gem 'animate-rails'
 # Use Puma as the app server
