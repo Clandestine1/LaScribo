@@ -143,16 +143,14 @@ body {
 
 #no-animation .caption {
   margin-right: 0% !important;
+  background-color: white !important;
+  color: slateblue !important;
 }
 
 #no-animation .name {
-  width: 348px auto !important;
-  padding-right: 0% !important;
-  padding-left: 18% !important;
-  padding-bottom: 2% !important;
-  padding-top: 2% !important;
-  margin-left: 6% !important;
-  display: none !important;
+ background-color: white !important;
+ color: skyblue !important;
+ margin-top: 4%;
 }
 
 #no-animation .image {
@@ -160,7 +158,7 @@ body {
 }
 
 #show-container {
-  height: 600px !important;
+  height: 560px !important;
   background-color: white !important;
   position: absolute;
   bottom: 4%;
@@ -200,7 +198,7 @@ line-height: 24px;
 width: 784px;	
 font-size: 18px;
 position: absolute;
-bottom: 12%;
+bottom: 4%;
 left: 34%;
 height: 500px;
 overflow: scroll !important;

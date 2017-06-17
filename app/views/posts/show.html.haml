@@ -2,14 +2,14 @@
 .posts-wrapper
   %div#no-animation.post
     .post-head
-    .image.center-block
-      =image_tag @post.image.url(:medium)
     %p.caption
       =@post.caption
-    %p.name
-      Boss Shauna
+    .image.center-block
+      =image_tag @post.image.url(:medium)
     %p.story
-      =@post.story  
+      =@post.story
+      %p.name
+      Boss Shauna  
     %div.text-center.edit-links
   = link_to "Edit Post", edit_post_path(@post)
   |
