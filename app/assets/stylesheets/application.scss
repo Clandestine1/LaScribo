@@ -30,6 +30,8 @@ body {
   background-image: url(http://i.imgur.com/mrW9FkW.jpg);
   font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
   margin: 0 auto;
+  font-family: 'PT Serif', serif;
+  font-weight: bolder;
 }
 
 .navbar-brand {
@@ -37,6 +39,7 @@ body {
     color: #3a95d0;
     font-size: 28px;
     font-weight: bolder;
+    font-family: 'Abril Fatface', cursive !important;
   }
 }
 
@@ -44,17 +47,21 @@ body {
   a {
     color:  white;
     text-decoration: none;
-
   }
 }
 
 .navbar-default {
+  position: fixed;
+     padding-left: 14%;
+    padding-right: 14%;
+    margin-right: -34% !important;
   background-color: rgba(0,0,0,0.54) !important;
   height: 54px;
   .navbar-nav li a {
     color: #3a95d0;
-    font-size: 20px;
+    font-size: 28px;
     font-weight: bolder;
+    font-family: 'Abril Fatface', cursive !important;
   }
 }
 
@@ -78,6 +85,23 @@ body {
 .navbar-container {
   width: 640px;
   margin: 0 auto;
+}
+
+.navbar-default img {
+  height: 54px !important;
+  float: left !important;
+  margin-left: -74% !important;
+}
+
+.navbar-default img:hover {
+  -webkit-animation-name: hvr-wobble-bottom;
+  animation-name: hvr-wobble-bottom;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
 }
 
 .container {
@@ -184,6 +208,7 @@ body {
   width: auto;
   color: white;
   text-align: center;
+  font-family: Arial !important;
 }
 
 .name {
@@ -191,6 +216,7 @@ body {
   color: #3a95d0;
   font-weight: bolder;
   margin-bottom: -4%;
+  font-family: Arial !important;
 }
 
 .story {
@@ -227,7 +253,19 @@ background-color: white;
   bottom: 0;
 }
 
-
+ul li.active {
+  background-color: none !important;
+  -webkit-animation-name: hvr-pulse-grow;
+  animation-name: hvr-pulse-grow;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite !important;
+  animation-iteration-count: infinite !important;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
 
 /* Pulse Grow */
 @-webkit-keyframes hvr-pulse-grow {
@@ -354,6 +392,80 @@ background-color: white;
   -webkit-backface-visibility: visible !important;
   backface-visibility: visible !important;
 }
+
+/* Wobble Bottom */
+@-webkit-keyframes hvr-wobble-bottom {
+  16.65% {
+    -webkit-transform: skew(-12deg);
+    transform: skew(-12deg);
+  }
+  33.3% {
+    -webkit-transform: skew(10deg);
+    transform: skew(10deg);
+  }
+  49.95% {
+    -webkit-transform: skew(-6deg);
+    transform: skew(-6deg);
+  }
+  66.6% {
+    -webkit-transform: skew(4deg);
+    transform: skew(4deg);
+  }
+  83.25% {
+    -webkit-transform: skew(-2deg);
+    transform: skew(-2deg);
+  }
+  100% {
+    -webkit-transform: skew(0);
+    transform: skew(0);
+  }
+}
+@keyframes hvr-wobble-bottom {
+  16.65% {
+    -webkit-transform: skew(-12deg);
+    transform: skew(-12deg);
+  }
+  33.3% {
+    -webkit-transform: skew(10deg);
+    transform: skew(10deg);
+  }
+  49.95% {
+    -webkit-transform: skew(-6deg);
+    transform: skew(-6deg);
+  }
+  66.6% {
+    -webkit-transform: skew(4deg);
+    transform: skew(4deg);
+  }
+  83.25% {
+    -webkit-transform: skew(-2deg);
+    transform: skew(-2deg);
+  }
+  100% {
+    -webkit-transform: skew(0);
+    transform: skew(0);
+  }
+}
+.hvr-wobble-bottom {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+}
+.hvr-wobble-bottom:hover, .hvr-wobble-bottom:focus, .hvr-wobble-bottom:active {
+  -webkit-animation-name: hvr-wobble-bottom;
+  animation-name: hvr-wobble-bottom;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
 
 
 

@@ -4,7 +4,7 @@
     %meta{:charset => "utf-8"}
     %meta{"http-equiv" => "X-UA-Compatible", :content => "IE=edge"}
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'application', "https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Serif", media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
 %body
@@ -15,17 +15,23 @@
 %nav.navbar.navbar-default.navbar-fixed-top
   .navbar-container 
     .navbar-header
+    %img{:src => 'http://i.imgur.com/EY8d2v1.png'}
+      = link_to image_tag( 'http://i.imgur.com/EY8d2v1.png'), 'https://github.com/Clandestine1/LaScribo'
       %button.navbar-toggle.collapsed{"data-target" => "#bs-navbar-collapse-1", "data-toggle" => "collapse", type: "button"}
         %span.sr-only Toggle Navigation
         %span.icon-bar
-        %span.icon-bar
-      .navbar-brand= link_to "Scribo", root_path
+        %span.icon-bar      
+    .navbar-brand
     .collapse.navbar-collapse#bs-navbar-collapse-1
-      %ul.nav.navbar-nav.navbar-right
+      %ul.nav.navbar-nav.navbar-right.active
+        %li
+          = link_to "Home", root_path
         %li
           = link_to "New Story", new_post_path
+        %li
+          = link_to "About", about_about_path
         %li
           = link_to "Login", '#'
         %li
           = link_to "Register", '#'
-  
+        
