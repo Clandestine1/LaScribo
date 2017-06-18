@@ -18,6 +18,7 @@ gem 'yarn'
 gem 'devise'  
 gem 'masonry-rails'
 gem 'animate-rails'
+gem 'aws-sdk', '~> 2.3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets

@@ -1,0 +1,302 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.6.2
+-- Dumped by pg_dump version 9.6.2
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: ar_internal_metadata; Type: TABLE; Schema: public; Owner: venomvixen
+--
+
+CREATE TABLE ar_internal_metadata (
+    key character varying NOT NULL,
+    value character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE ar_internal_metadata OWNER TO venomvixen;
+
+--
+-- Name: posts; Type: TABLE; Schema: public; Owner: venomvixen
+--
+
+CREATE TABLE posts (
+    id bigint NOT NULL,
+    caption character varying,
+    story character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL,
+    image_file_name character varying,
+    image_content_type character varying,
+    image_file_size integer,
+    image_updated_at timestamp without time zone,
+    user_id bigint
+);
+
+
+ALTER TABLE posts OWNER TO venomvixen;
+
+--
+-- Name: posts_id_seq; Type: SEQUENCE; Schema: public; Owner: venomvixen
+--
+
+CREATE SEQUENCE posts_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE posts_id_seq OWNER TO venomvixen;
+
+--
+-- Name: posts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: venomvixen
+--
+
+ALTER SEQUENCE posts_id_seq OWNED BY posts.id;
+
+
+--
+-- Name: schema_migrations; Type: TABLE; Schema: public; Owner: venomvixen
+--
+
+CREATE TABLE schema_migrations (
+    version character varying NOT NULL
+);
+
+
+ALTER TABLE schema_migrations OWNER TO venomvixen;
+
+--
+-- Name: users; Type: TABLE; Schema: public; Owner: venomvixen
+--
+
+CREATE TABLE users (
+    id bigint NOT NULL,
+    email character varying DEFAULT ''::character varying NOT NULL,
+    encrypted_password character varying DEFAULT ''::character varying NOT NULL,
+    reset_password_token character varying,
+    reset_password_sent_at timestamp without time zone,
+    remember_created_at timestamp without time zone,
+    sign_in_count integer DEFAULT 0 NOT NULL,
+    current_sign_in_at timestamp without time zone,
+    last_sign_in_at timestamp without time zone,
+    current_sign_in_ip inet,
+    last_sign_in_ip inet,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL,
+    user_name character varying
+);
+
+
+ALTER TABLE users OWNER TO venomvixen;
+
+--
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: venomvixen
+--
+
+CREATE SEQUENCE users_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE users_id_seq OWNER TO venomvixen;
+
+--
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: venomvixen
+--
+
+ALTER SEQUENCE users_id_seq OWNED BY users.id;
+
+
+--
+-- Name: posts id; Type: DEFAULT; Schema: public; Owner: venomvixen
+--
+
+ALTER TABLE ONLY posts ALTER COLUMN id SET DEFAULT nextval('posts_id_seq'::regclass);
+
+
+--
+-- Name: users id; Type: DEFAULT; Schema: public; Owner: venomvixen
+--
+
+ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
+
+
+--
+-- Data for Name: ar_internal_metadata; Type: TABLE DATA; Schema: public; Owner: venomvixen
+--
+
+COPY ar_internal_metadata (key, value, created_at, updated_at) FROM stdin;
+environment	development	2017-06-15 17:51:43.446896	2017-06-15 17:51:43.446896
+\.
+
+
+--
+-- Data for Name: posts; Type: TABLE DATA; Schema: public; Owner: venomvixen
+--
+
+COPY posts (id, caption, story, created_at, updated_at, image_file_name, image_content_type, image_file_size, image_updated_at, user_id) FROM stdin;
+9	n 	n 	2017-06-17 03:39:47.200849	2017-06-17 06:39:45.344657	me.gif	image/gif	3524638	2017-06-17 06:39:38.938534	\N
+6	Fire	Story of my Life	2017-06-17 01:21:29.771578	2017-06-17 06:41:04.189648	fire.gif	image/gif	1087263	2017-06-17 06:40:59.265747	\N
+2	How To Find Love	I can only describe this as an addiction. Like a crack addict is drawn to those stupid little crack rocks, I’m drawn to this silly little thing called love. Like a moth to a flame, I clammer to this thing of my dreams, to love and to be loved in return. I can only imagine how it truly feels to be in love but the insatiable lust builds within me. My every being screams for tender warmth while my body decays from hopelessness. 	2017-06-15 19:30:44.303841	2017-06-17 06:41:22.824325	background.jpg	image/jpeg	245502	2017-06-17 06:41:22.446691	1
+10	j	j	2017-06-17 03:40:09.381727	2017-06-17 06:41:49.885825	NO5LLdV.gif	image/gif	893269	2017-06-17 06:41:47.782818	\N
+1	One Sky	When I look up at the sky, I dream of a world where we can both gaze upon the same endless blue sky. Two hearts that used to beat as one; one heart that’s broken up in pieces, one heart that beats no more. Haunted by memories of the past, stuck in the petrification of the present, forlorn by the rumbles of the future. Where do you turn when you’ve become a prisoner of your own thoughts? I prayed to be rid of this abyss encompassing my soul, but after twenty years the thoughts persist. I’d throw this wretched life away just for one more day with you. When I look up at the sky now, I know things will never be the same. 	2017-06-15 18:25:09.272092	2017-06-17 13:13:18.548364	1NoKzpb.jpg	image/jpeg	42500	2017-06-17 13:13:18.129308	1
+7	DanganRonpa	Story of a Girl...	2017-06-17 02:03:16.529257	2017-06-17 17:35:13.110714	download.gif	image/gif	125557	2017-06-17 17:35:12.036311	\N
+5	Testing	Fuck My Life	2017-06-17 01:20:39.446461	2017-06-17 06:11:55.256063	pika.gif	image/gif	637529	2017-06-17 06:11:48.223705	\N
+8	Boss Shauna	I AM ME	2017-06-17 02:04:26.059443	2017-06-17 06:12:33.461803	2570864-kingdomhearts1.jpg	image/jpeg	108624	2017-06-17 06:12:33.038591	\N
+11	d	d	2017-06-17 03:40:53.330797	2017-06-17 06:13:52.16296	Landown_attack.jpg	image/jpeg	305899	2017-06-17 06:13:51.713593	\N
+13	k	k	2017-06-17 04:19:36.90278	2017-06-17 06:13:18.949494	tumblr_inline_mrj2juQUfF1qz4rgp.gif	image/gif	436556	2017-06-17 06:13:15.622255	\N
+3	Unraveled	Oh won’t you tell me? Won’t you acknowledge? This thing I’ve come to be?   In my black and white world I’m drawn to your resplendent color I feel like if I reach out far enough, you’re tangible I can’t forget, I won’t forget, they won’t let me forget  This monster inside of me   Every day my world loses more color I try to break through the chains but I end up only seeing red Don’t look for me if I have to walk away No, don’t even look at me Remain blissful and ignorant You curiously watch as I become unchained   The charade is over, I’ve lost my mask I try to pick up the pieces Even knowing my fate won’t unravel me Until I take my last breath   I’m so breakable yet unbreakable I’m shaking but I’m unshakeable  The real you haunts my dreams   I can only stand alone in this colorless world But in hiding away I lose myself more and more I hope you’ll give up There’s nothing left to see Don’t look for me when I have to walk away No, don’t even look at me I’m standing forlorn in this perpetually changing world I never want to hurt you so until the bitter end I’m pleading with you to remember me as I once was Remember me as vivid as I used to be   Oh won’t you tell me? The monster that you see? Has it always dwelled inside of me?   Loneliness wraps around me deepening my descent  Into the abyss until I drown in darkness Fond memories pierce my heart until the Overwhelming numbness overtakes me I cannot run. I cannot hide. I cannot speak. I cannot think. I cannot leave you My world is unraveling   The change is so illogical What even made it possible? With our lives and fate intertwined The two of us shall be left behind   I’m unbreakable but I’m breaking I’m unshakable yet I’m shaking The real you will not hinder me   I can only stand alone in this colorless world But by hiding away my true self is fading I know you’ll give up There’s nothing left of me Don’t look for me when I walk away No, don’t even look at me I’m just a pawn trapped inside someone’s master plan Before what remains of us and our future crumbles to dust I’m pleading with you to please just remember me Remember me as bright as I used to be   Don’t you forget about me Don’t you forget about me Don’t you forget about me Don’t you forget about me   Looking into the mirror leaves me paralyzed by the changs Even if I never have the chance to find my own worth Once again, I’m begging you to please just remember me  Remember me for the girl I used to be   Oh won’t you please? Won’t you please tell me? This monster that you see? Is it the real me?	2017-06-15 20:13:39.830396	2017-06-17 06:14:47.123789	apple.jpg	image/jpeg	267328	2017-06-17 06:14:46.453701	1
+14	l	l	2017-06-17 06:15:20.145638	2017-06-17 06:15:20.145638	ddd.gif	image/gif	1043024	2017-06-17 06:15:17.581124	\N
+15	Nagito <3	Nagito is bae	2017-06-17 06:42:16.069607	2017-06-17 06:42:16.069607	lucki1.jpg	image/jpeg	150006	2017-06-17 06:42:15.543954	\N
+16	s	s	2017-06-17 08:50:43.675203	2017-06-17 08:50:43.675203	giphy.gif	image/gif	292922	2017-06-17 08:50:41.776823	\N
+17	h	h	2017-06-17 08:51:19.582408	2017-06-17 08:51:19.582408	xgWUg0b.gif	image/gif	2084380	2017-06-17 08:51:11.594633	\N
+18	dr	dr	2017-06-17 08:51:50.612029	2017-06-17 17:35:30.155432	danganronpa-sidebar.jpg	image/jpeg	510421	2017-06-17 17:35:29.432845	\N
+\.
+
+
+--
+-- Name: posts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: venomvixen
+--
+
+SELECT pg_catalog.setval('posts_id_seq', 18, true);
+
+
+--
+-- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: venomvixen
+--
+
+COPY schema_migrations (version) FROM stdin;
+20170615164040
+20170615175320
+20170615185721
+20170615192237
+\.
+
+
+--
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: venomvixen
+--
+
+COPY users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at, user_name) FROM stdin;
+1	clandestine.rose@yahoo.com	$2a$11$1Ja5QKfHFFaQmZPTDTWlWuZi7qN7yYcBt.AOT23cJ0fNvPQWUmz7.	\N	\N	\N	3	2017-06-15 19:29:48.8193	2017-06-15 19:28:58.167604	127.0.0.1	127.0.0.1	2017-06-15 19:24:27.900065	2017-06-15 19:29:48.820425	ClandestineRose
+2	haylee.havok@aol.com	$2a$11$ucU47EsFPFje7Wcju13TPO0Ay6hSlHfS3OKNdlKNQfkHnDkcfCJoG	\N	\N	\N	1	2017-06-15 20:37:51.909491	2017-06-15 20:37:51.909491	127.0.0.1	127.0.0.1	2017-06-15 20:37:51.881871	2017-06-15 20:37:51.91038	VenomVixen
+\.
+
+
+--
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: venomvixen
+--
+
+SELECT pg_catalog.setval('users_id_seq', 2, true);
+
+
+--
+-- Name: ar_internal_metadata ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: public; Owner: venomvixen
+--
+
+ALTER TABLE ONLY ar_internal_metadata
+    ADD CONSTRAINT ar_internal_metadata_pkey PRIMARY KEY (key);
+
+
+--
+-- Name: posts posts_pkey; Type: CONSTRAINT; Schema: public; Owner: venomvixen
+--
+
+ALTER TABLE ONLY posts
+    ADD CONSTRAINT posts_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: schema_migrations schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: venomvixen
+--
+
+ALTER TABLE ONLY schema_migrations
+    ADD CONSTRAINT schema_migrations_pkey PRIMARY KEY (version);
+
+
+--
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: venomvixen
+--
+
+ALTER TABLE ONLY users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: index_posts_on_user_id; Type: INDEX; Schema: public; Owner: venomvixen
+--
+
+CREATE INDEX index_posts_on_user_id ON posts USING btree (user_id);
+
+
+--
+-- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: venomvixen
+--
+
+CREATE UNIQUE INDEX index_users_on_email ON users USING btree (email);
+
+
+--
+-- Name: index_users_on_reset_password_token; Type: INDEX; Schema: public; Owner: venomvixen
+--
+
+CREATE UNIQUE INDEX index_users_on_reset_password_token ON users USING btree (reset_password_token);
+
+
+--
+-- Name: index_users_on_user_name; Type: INDEX; Schema: public; Owner: venomvixen
+--
+
+CREATE UNIQUE INDEX index_users_on_user_name ON users USING btree (user_name);
+
+
+--
+-- Name: posts fk_rails_5b5ddfd518; Type: FK CONSTRAINT; Schema: public; Owner: venomvixen
+--
+
+ALTER TABLE ONLY posts
+    ADD CONSTRAINT fk_rails_5b5ddfd518 FOREIGN KEY (user_id) REFERENCES users(id);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
