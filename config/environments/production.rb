@@ -56,15 +56,15 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
-  config.paperclip_defaults = {
-  storage: :s3,
-  s3_credentials: {
-    bucket: ENV.fetch('scribo'),
-    access_key_id: ENV.fetch('AKIAJY5CXF52NKIQXRVQ'),
-    secret_access_key: ENV.fetch('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'),
-    s3_region: ENV.fetch('us-east-2'),
-  }
-}
+  #config.paperclip_defaults = {
+  #storage: :s3,
+  #s3_credentials: {
+   # bucket: ENV.fetch('scribo'),
+   # access_key_id: ENV.fetch('AKIAJY5CXF52NKIQXRVQ'),
+   # secret_access_key: ENV.fetch('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'),
+   # s3_region: ENV.fetch('us-east-2'),
+  #}
+#}
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "LaScribo_#{Rails.env}"
