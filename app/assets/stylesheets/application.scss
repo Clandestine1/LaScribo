@@ -51,7 +51,6 @@ body {
 }
 
 .navbar-default {
-  position: fixed;
      padding-left: 14%;
     padding-right: 14%;
     margin-right: -34% !important;
@@ -251,20 +250,6 @@ background-color: white;
   margin-bottom: 40px;
   position: absolute;
   bottom: 0;
-}
-
-ul li.active {
-  background-color: none !important;
-  -webkit-animation-name: hvr-pulse-grow;
-  animation-name: hvr-pulse-grow;
-  -webkit-animation-duration: 0.3s;
-  animation-duration: 0.3s;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite !important;
-  animation-iteration-count: infinite !important;
-  -webkit-animation-direction: alternate;
-  animation-direction: alternate;
 }
 
 /* Pulse Grow */
